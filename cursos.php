@@ -12,7 +12,7 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Escola</a>
+            <a class="navbar-brand" href="#">Biblioteca</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -22,7 +22,7 @@
                     <a class="nav-link active" aria-current="page" href="index.php">Início</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="cursos.php">Genero</a>
+                    <a class="nav-link" href="cursos.php">Gênero</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="alunos.php">Estoque</a>
@@ -37,10 +37,10 @@
 
     <center>
         <br>
-        <h1>Listagem de Cursos</h1>
+        <h1>Gênero</h1>
         <br>
         <br>
-        <a href="cursos_formulario.php" class="btn btn-primary" role="button">Cadastrar Curso</a>
+        <a href="cursos_formulario.php" class="btn btn-primary" role="button">Cadastro</a>
     </center>
 
     <?php
@@ -48,7 +48,7 @@
     $servidor = "localhost";
     $usuario = "root";
     $senha = "";
-    $banco = "Biblioteca";
+    $banco = "biblioteca";
 
     $conn = new mysqli($servidor, $usuario, $senha, $banco);
 
@@ -58,7 +58,7 @@
         //echo "Conectado com o banco!";
     }
 
-    $consulta = "SELECT * FROM `cursos`";
+    $consulta = "SELECT * FROM `quantidade_de_livros`";
     $result = $conn->query($consulta);
 
     if ($result->num_rows > 0) {
@@ -67,9 +67,8 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col"></th>
+                <th scope="col">genero</th>
+                <th scope="col">estoque</th>
             </tr>
         </thead>
         <tbody>
@@ -81,9 +80,11 @@
             
             echo "<tr>";
             echo "<th scope=\"row\">". $row["id"] ."</th>";
-            echo "<td>". $row["nome"] ."</td>";
-            echo "<td><a href=\"cursos_exclui.php?id=". $row["id"] ."\">Excluir</a></td>";
+            echo "<td>". $row["genero"] ."</td>";
+            echo "<td>". $row["estoque"] ."</td>";
+            echo "<td><a href=\"funcionarios_exclui.php?id=". $row["id"] ."\">Excluir</a>genero</td>";
             echo "</tr>";
+        
         }
 ?>
 

@@ -22,10 +22,10 @@
                     <a class="nav-link active" aria-current="page" href="index.php">Início</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="cursos.php">genero</a>
+                    <a class="nav-link" href="cursos.php">Nome</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="alunos.php">estoque</a>
+                    <a class="nav-link" href="alunos.php">Funcao</a>
                 </li>
             </ul>
             <span class="navbar-text">
@@ -37,7 +37,7 @@
 
     <center>
         <br>
-        <h1>Cadastro de Cursos</h1>
+        <h1> Seu Cadastro</h1>
         <br>
         <br>
         <a href="cursos.php" class="btn btn-primary" role="button">Voltar</a>

@@ -9,23 +9,23 @@ $nome = $_POST['nome'];
 $servidor = "localhost";
 $usuario = "root";
 $senha = "";
-$banco = "Biblioteca";
+$banco = "biblioteca";
 
 $conn = new mysqli($servidor, $usuario, $senha, $banco);
 
 if ($conn->connect_error) {
     die("Erro: " . $conn->connect_error);
 } else {
-    //echo "Conectado com o banco!";
+    //echo "Bem vindo à biblioteca All too well!";
 }
 
-$consulta = "INSERT INTO `cursos` (`id`, `nome`) VALUES (NULL, '" . $nome . "');";
+$consulta = "INSERT INTO `nome` (`id`, `nome`) VALUES (NULL, '$nome');";
 $result = $conn->query($consulta);
 $conn->close();
 
 
 // Redireciona para INDEX
-header('Location: http://localhost/portifolio/cursos.php');
+header('Location: http://localhost/escola/cursos.php');
 
 
 ?>

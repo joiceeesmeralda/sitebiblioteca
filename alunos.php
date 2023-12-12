@@ -22,10 +22,10 @@
                     <a class="nav-link active" aria-current="page" href="index.php">Início</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="cursos.php">genero</a>
+                    <a class="nav-link" href="cursos.php">Gênero</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="alunos.php">estoque</a>
+                    <a class="nav-link" href="alunos.php"></a>
                 </li>
             </ul>
             <span class="navbar-text">
@@ -37,10 +37,10 @@
 
     <center>
         <br>
-        <h1>Listagem de Alunos</h1>
+        <h1>Funcionarios</h1>
         <br>
         <br>
-        <a href="alunos_formulario.php" class="btn btn-primary" role="button">Cadastrar Aluno</a>
+        <a href="alunos_formulario.php" class="btn btn-primary" role="button">Cadastro</a>
     </center>
 
     <?php
@@ -48,7 +48,7 @@
     $servidor = "localhost";
     $usuario = "root";
     $senha = "";
-    $banco = "Biblioteca";
+    $banco = "biblioteca";
 
     $conn = new mysqli($servidor, $usuario, $senha, $banco);
 
@@ -58,7 +58,7 @@
         //echo "Conectado com o banco!";
     }
 
-    $consulta = "SELECT * FROM `alunos`";
+    $consulta = "SELECT * FROM `funcionarios`";
     $result = $conn->query($consulta);
 
     if ($result->num_rows > 0) {
@@ -67,9 +67,9 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome</th>
                 <th scope="col"></th>
+                <th scope="col">Nome</th>
+                <th scope="col">Função</th>
             </tr>
         </thead>
         <tbody>
@@ -82,7 +82,8 @@
             echo "<tr>";
             echo "<th scope=\"row\">". $row["id"] ."</th>";
             echo "<td>". $row["nome"] ."</td>";
-            echo "<td><a href=\"alunos_exclui.php?id=". $row["id"] ."\">Excluir</a></td>";
+            echo "<td>". $row["funcao"] ."</td>";
+            echo "<td><a href=\"funcionarios_exclui.php?id=". $row["id"] ."\">Excluir</a></td>";
             echo "</tr>";
         }
 ?>

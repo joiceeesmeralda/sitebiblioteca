@@ -1,13 +1,7 @@
 <?php
 
-$nome = $_POST['nome'];
-$funcao = $_POST['funcao'];
+$id = $_GET['id'];
 
-
-//echo $nome;
-
-
-// Salva no banco de dados
 $servidor = "localhost";
 $usuario = "root";
 $senha = "";
@@ -21,13 +15,12 @@ if ($conn->connect_error) {
     //echo "Conectado com o banco!";
 }
 
-$consulta = "INSERT INTO `funcionarios` (`id`, `nome`, `funcao`) VALUES (NULL, '".$nome."', '".$funcao."');";
+$consulta = "DELETE FROM funcao WHERE `funcao`.`id` = " . $id;
 $result = $conn->query($consulta);
 $conn->close();
 
 
 // Redireciona para INDEX
-header('Location: http://localhost/escola/alunos.php');
-
+header('Location: http://localhost/portifolio/alunos.php');
 
 ?>
